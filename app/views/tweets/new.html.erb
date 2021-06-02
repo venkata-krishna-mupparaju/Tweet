@@ -1,0 +1,17 @@
+<h2>New Tweet</h2>
+
+<div>
+	<%= form_for :tweet, url: tweets_path do %>
+		<div>
+			<%= label_tag :tweet %>
+		</div>
+		<div>
+			<%= text_area_tag :body, "", required: true %>
+		</div>
+		<br/>
+		<div>
+			<%= button_tag :submit %>
+		</div>
+	<% end %>
+
+</div>

@@ -1,0 +1,24 @@
+<h2>All Tweets</h2>
+<%= link_to "Create Tweet", new_tweet_path %>
+<div>
+  <table>
+  	<thead>
+  		<tr>
+  			<th>S.No</th>
+  			<th>Body</th>
+  			<th>Time</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<%- @tweets.each_with_index do |tweet, index| %>
+  			<tr>
+  				<td><%= index + 1 %></td>
+  				<td><%= tweet.text %></td>
+  				<td><%= tweet.created_at %></td>
+  			</tr>
+  		<% end %>
+  	</tbody>
+  </table>
+</div>
+
+<%= will_paginate @tweets %>
