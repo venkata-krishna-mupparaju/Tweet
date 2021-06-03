@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-
-	def validate_user
+   
+  def validate_user
     request_token = OAuth::RequestToken.new(consumer, session[:request_token], session[:request_token_secret])
     access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
     session[:access_token_key] = access_token.token
