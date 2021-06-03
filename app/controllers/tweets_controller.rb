@@ -12,8 +12,8 @@ class TweetsController < ApplicationController
 
   def create
     client.update(params[:body])
-  	redirect_to tweets_path
-  	flash[:success] = "Created Tweet Successfully"
+    redirect_to tweets_path
+    flash[:success] = "Created Tweet Successfully"
   end
 
 end
